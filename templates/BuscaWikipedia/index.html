@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+<header>
+    <form>
+        {{ form.pesquisa }}
+        <button type="submit" class="button">Pesquisar</button>
+    </form>
+</header>
+
+<div>
+    {% if titulo %}
+    <h1>{{titulo}}</h1>
+
+    {% for paragrafo in resumo%}
+    <p>{{paragrafo}}</p>
+    {% endfor %}
+    <a href="{{url}}">{{titulo}} : Wikipédia</a>
+    {% endif %}
+
+    {% if opcoes %}
+    <h1>Tente escolher uma dessas opções:</h1>
+    <p>{{opcoes|join:", "}}.</p>
+    {% endif %}
+
+    {% if mensagem %}
+    <h1>{{mensagem}}</h1>
+    {% endif %}
+</div>
